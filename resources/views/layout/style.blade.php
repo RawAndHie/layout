@@ -26,3 +26,6 @@
 
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
+
+<link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
