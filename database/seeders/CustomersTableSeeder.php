@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CustomersTableSeeder extends Seeder
 {
@@ -13,8 +14,9 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('customers')->truncate();
-        \Illuminate\Support\Facades\DB::table('customers')->insert([
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table('customers')->truncate();
+        DB::table('customers')->insert([
             [
                 'customer_id'=>101,
                 'name'=>'Trần Anh Đức',
@@ -41,5 +43,6 @@ class CustomersTableSeeder extends Seeder
                 'address'=>'Bến Tre'
             ]
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class OrderTableSeeder extends Seeder
 {
@@ -13,59 +15,61 @@ class OrderTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('orders')->truncate();
-        \Illuminate\Support\Facades\DB::table('orders')->insert([
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table('orders')->truncate();
+        DB::table('orders')->insert([
             [
                 'order_id'=>827,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-4),
+                'created_at'=> Carbon::now()->addDays(-4),
                 'customer_id'=>103
             ],
             [
                 'order_id'=>409,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-2),
+                'created_at'=> Carbon::now()->addDays(-2),
                 'customer_id'=>104
             ],
             [
                 'order_id'=>305,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-1),
+                'created_at'=> Carbon::now()->addDays(-1),
                 'customer_id'=>103
             ],
             [
                 'order_id'=>984,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-6),
+                'created_at'=> Carbon::now()->addDays(-6),
                 'customer_id'=>101
             ],
             [
                 'order_id'=>309,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-10),
+                'created_at'=> Carbon::now()->addDays(-10),
                 'customer_id'=>105
             ],
             [
                 'order_id'=>847,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-2),
+                'created_at'=> Carbon::now()->addDays(-2),
                 'customer_id'=>102
             ],
             [
                 'order_id'=>498,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-25),
+                'created_at'=> Carbon::now()->addDays(-25),
                 'customer_id'=>103
             ],
             [
                 'order_id'=>509,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-30),
+                'created_at'=> Carbon::now()->addDays(-30),
                 'customer_id'=>104
             ],
             [
                 'order_id'=>998,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-2),
+                'created_at'=> Carbon::now()->addDays(-2),
                 'customer_id'=>103
             ],
             [
                 'order_id'=>983,
-                'created_at'=> \Carbon\Carbon::now()->addDays(-5),
+                'created_at'=> Carbon::now()->addDays(-5),
                 'customer_id'=>105
             ]
 
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class OrderDetailTableSeeder extends Seeder
 {
@@ -13,8 +14,9 @@ class OrderDetailTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('order_details')->truncate();
-        \Illuminate\Support\Facades\DB::table('order_details')->insert([
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table('order_details')->truncate();
+        DB::table('order_details')->insert([
             [
                 'order_id'=>983,
                 'product_id'=>109,
@@ -196,5 +198,6 @@ class OrderDetailTableSeeder extends Seeder
                 'amount'=>1,
             ]
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

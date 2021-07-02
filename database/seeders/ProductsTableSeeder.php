@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -13,8 +14,9 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('products')->truncate();
-        \Illuminate\Support\Facades\DB::table('products')->insert([
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::table('products')->truncate();
+        DB::table('products')->insert([
             [
                 'product_id'=>101,
                 'price'=>64000,
@@ -66,5 +68,6 @@ class ProductsTableSeeder extends Seeder
                 'name'=>'Móc khóa lệnh bài Đấu La Đại Lục'
             ]
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
