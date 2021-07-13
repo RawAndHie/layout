@@ -40,7 +40,8 @@
                                 </ul>
                             </div>
                         @endif
-                        <form class="form-horizontal form-bordered" method="get">
+                        <form class="form-horizontal form-bordered" method="post" action="/event">
+                            @csrf
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="inputDefault">Event Name</label>
                                 <div class="col-md-6">
@@ -82,9 +83,16 @@
                                     <input type="text" class="form-control" name="Status">
                                 </div>
                             </div>
-                            <div class="col-sm-9 col-sm-offset-3">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-6 col-xs-11">
+                                    <button class="btn btn-sm btn-primary colorpicker-element">
+                                        Submit
+                                    </button>
+                                    <button class="btn btn-sm btn-default colorpicker-element">
+                                        Reset
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>

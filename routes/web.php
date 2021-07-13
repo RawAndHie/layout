@@ -27,5 +27,5 @@ Route::get('/calendar',[CalendarController::class, 'calendar']);
 Route::get('/ui', [UiController::class, 'ui']);
 Route::get('/product', [ProductController::class, 'listProduct']);
 Route::get('/event', [EventsController::class, 'eventController']);
-Route::post('/post', [EventsController::class, 'store']);
+Route::post('/event', [EventsController::class, 'store']);
 
