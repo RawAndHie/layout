@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UiController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +25,7 @@ Route::get('/list', [ListController::class, 'listTables']);
 Route::get('/form', [FormController::class, 'form']);
 Route::get('/calendar',[CalendarController::class, 'calendar']);
 Route::get('/ui', [UiController::class, 'ui']);
+Route::get('/product', [ProductController::class, 'listProduct']);
+Route::get('/event', [EventsController::class, 'eventController']);
+Route::post('/post', [EventsController::class, 'store']);
 
